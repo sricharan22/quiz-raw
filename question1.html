@@ -14,6 +14,8 @@
     <script>
         function register() {
             var getSelectedValue = document.querySelector('input[name="ans"]:checked');
+            var userselected = getSelectedValue.value;
+            var defaultanswer = document.getElementById("78").value;
             if (getSelectedValue != null) {
                 var c = localStorage.getItem("correct");
                 var w = localStorage.getItem("wrong");
@@ -29,6 +31,7 @@
                 if (localStorage) {
                     localStorage.setItem("correct", crct);
                     localStorage.setItem("wrong", wrng);
+                    localStorage.setItem("question1",userselected+":"+defaultanswer);
                 }
             }
         }
@@ -36,20 +39,21 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container"><br><br><br><br>
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6 border border-dark border-4" style="background-color: #E5FCE3;">
-                <h1>What is 36 + 42?</h1>
+                <center><h2>Think carefully before attempting</h2><br><h2>Question-1</h2><br></center>
+                <h1>What is 36 + 42?</h1><br>
 
                 <form action="question2.html" style="font-size: 30px;">
                     
-                    <input type="radio" name="ans" id="64" value="64" required><label for="64">64</label><br>
+                    <input type="radio" name="ans" id="64" value="64" required><label for="64">64</label><br><br>
                     
-                    <input type="radio" name="ans" id="78" value="78"><label for="78">78</label><br>
+                    <input type="radio" name="ans" id="78" value="78"><label for="78">78</label><br><br>
                     
                     <input type="radio" name="ans" id="76" value="76"><label for="76">76</label><br><br>
-                    <input type="submit" value="Submit" onclick="register()">
+                    <input type="submit" value="Submit" onclick="register()"><br><br>
                 </form>
             </div>
             <div class="col-sm-3"></div>

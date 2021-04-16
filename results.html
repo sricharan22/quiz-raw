@@ -55,9 +55,44 @@
                     '<td  align="center"><font face="helvetica"><b>' + per + '%</b></font></td>' +
                     '</tr>' +
                     '</table>' +
-                    '</center>'+'</div>'+'<div class="col-sm-3"></div>' +'</div>'+'</div>';
-                document.writeln("<h1><center>RESULTS</center><h1>")
+                    '</center>' + '</div>' + '<div class="col-sm-3"></div>' + '</div>' + '</div>';
+
+                var firstans = localStorage.getItem("question1").split(":");
+                var defaultans1 = firstans[1];
+                var userselected1 = firstans[0];
+                var secondans = localStorage.getItem("question2").split(":");
+                var defaultans2 = secondans[1];
+                var userselected2 = secondans[0];
+
+                var report =
+                    '<div class="container">' +
+                    '<div class="row">' +
+                    '<div class="col-sm-2"></div>' +
+                    '<div class="col-sm-8">' +
+                    '<center>' +
+                    '<table class="table border border-dark border-4 table-bordered">' +
+                    '<tr bgcolor=  #E5FCE3 >' +
+                    '<td  align="center"><font face="helvetica"><b>Question No.</b></font></td>' +
+                    '<td  align="center"><font face="helvetica"><b>Default Answer</b></font></td>' +
+                    '<td  align="center"><font face="helvetica"><b>Your Answer</b></font></td>' +
+                    '</tr>' +
+                    '<tr bgcolor=  #E5FCE3 >' +
+                    '<td  align="center"><font face="helvetica"><b>1</b></font></td>' +
+                    '<td  align="center"><font face="helvetica"><b>' + defaultans1 + '</b></font></td>' +
+                    '<td  align="center"><font face="helvetica"><b>' + userselected1 + '</b></font></td>' +
+                    '</tr>' +
+                    '<tr bgcolor=  #E5FCE3>' +
+                    '<td  align="center"><font face="helvetica"><b>2</b></font></td>' +
+                    '<td  align="center"><font face="helvetica"><b>' + defaultans2 + '</b></font></td>' +
+                    '<td  align="center"><font face="helvetica"><b>' + userselected2 + '</b></font></td>' +
+                    '</tr>' +
+                    '</table>' +
+                    '</center>' + '</div>' + '<div class="col-sm-2"></div>' + '</div>' + '</div>';
+
+                document.writeln("<br><h1><center>RESULTS</center><h1><br>");
                 document.writeln(myTable);
+                document.writeln("<br><h1><center>DETAILED REPORT</center><h1><br>");
+                document.writeln(report);
             }
         }
         register();
